@@ -117,29 +117,27 @@ stampaHtml(icons, contenitoreIcons); //così richiamo la funzione per la stampa 
 
 //CREAREUN ARRAY PER TUTTI I TIPI IN MODO DINAMICO
 // CREO UN ARRAY VUOTO DI TIPI 
-// ARRAY FATTO SU ICONS 
 // ALL'INTERNO DEL FOREACH DEVO PRENDERE IL TYPE DI ICONA E AGGIUNGERE NELL'ARRAY VUOTO SE NON E' PRESENTE.
 
-icons.forEach((element) => {
 
-    let arrayIcons = [];
-    
-});
-
+let arrayIconsType = getTypesFromArray(icons);          // il return della funzione getTypeFromArray ritorna come variabile che è uguale alla funzione 
+                                                        // (icons indica l'oggetto)
+console.log(arrayIconsType);
 
 
+//FUNZIONE PER IDENTIFICARE IL TYPE DELL'ELEMENTO
+function getTypesFromArray(array){
+    let arrayIconsType = [];          //creare arrey vuoto per
+    array.forEach((element) => {      // foreach per iterare array oggetto
 
-
-
-
-
-
-
-
-
-
-
-
+        console.log(element.type);                              //per visualizzare i type
+        if ( ! arrayIconsType.includes(element.type)){          //se non sono inclusi nell'aray 
+            arrayIconsType.push(element.type)                   //Aggiungere i type nell'array
+            
+        }
+    });
+    return arrayIconsType;                                      //serve per tornare il valore fuori dalla funzione
+}
 
 
 //FUNZIONE CHE SERVE PER LA STAMPA HTML 
