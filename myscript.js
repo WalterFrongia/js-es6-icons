@@ -8,7 +8,7 @@
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
 
-let icon =
+let icons =
 [
 	{
 		name: 'cat',
@@ -107,3 +107,18 @@ let icon =
 		family: 'fas'
 	}
 ];
+
+
+let contenitoreIcons = document.getElementById("my-container-icons")  //salvo in una variabile la stampa per html 
+
+icons.forEach((element) => {   //utilizzo il foEach per ciclare ogni elemento dell'oggetto nell'array
+    console.log(element);   
+                                    // questo serve per stampare codice html nel file JS, 
+                                    // la sintassi dollaro e parentesi graffe serve per aggiungere variabili e oggetti con valore specifico tramite 
+                                    //il punto
+                                    // += (serve per aggiungere ogni elemento)  
+    contenitoreIcons.innerHTML +=  `<li class="my-icon"> 
+                                        <i class="${element.family} ${element.prefix}${element.name}"></i>
+                                        <p>${element.name}</p>
+                                    </li>`
+});
